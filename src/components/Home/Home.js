@@ -1,13 +1,12 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
 import Header from '../Header/Header';
+import SearchSection from '../pages/SearchSection/SearchSection';
 
 const Home = () => {
     return (
         <div>
-            <Routes>
-                <Route path='/' element={<Header />}></Route>
-            </Routes>
+            <Header/>
+            <SearchSection />
         </div>
     );
 };
