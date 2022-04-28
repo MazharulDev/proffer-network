@@ -3,12 +3,12 @@ import Header from '../Header/Header';
 import SearchSection from '../pages/SearchSection/SearchSection';
 import Services from './Services/Services';
 
-const Home = () => {
+const Home = ({handleSelectService}) => {
     return (
         <div>
             <Header/>
             <SearchSection />
-            <Services />
+            <Services handleSelectService={handleSelectService}/>
         </div>
     );
 };

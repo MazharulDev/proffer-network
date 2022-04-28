@@ -30,9 +30,10 @@ const Header = () => {
                 </div>
                 <div className={`md:flex md:items-center md:gap-4 bg-indigo-500 md:bg-transparent absolute md:static duration-500 ease-in ${open ? 'top-10' : 'top-[-120px]'}`}>
                     <div className='md:flex items-center gap-3'>
-                        <div className='flex gap-2 mb-5 md:mb-0'>
+                        <div className='flex gap-5 mb-5 md:mb-0'>
                             <Link to='/'>Home</Link>
                             <Link to='/donation'>Donation</Link>
+                            <Link to='/selectService'>Select Service</Link>
                             <Link to='/events'>Events</Link>
                             <Link to='/blogs'>Blogs</Link>
                             

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Service = ({ service }) => {
+const Service = ({ service,handleSelectService }) => {
     const { name, img } = service;
     return (
-        <div className='mt-10'>
+        <div onClick={()=>handleSelectService(service)} className='mt-10'>
             <div className='bg-white'>
                 <img className='absolute w-56'src={img} alt="" />
                 
