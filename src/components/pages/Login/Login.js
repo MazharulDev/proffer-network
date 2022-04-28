@@ -1,18 +1,28 @@
 import React from 'react';
 import logo from '../../../images/logos/Group 1329.png'
 import {FcGoogle} from 'react-icons/fc'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 const Login = () => {
+    const location=useLocation();
+    const navigate=useNavigate();
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const handleGoogleSignIn=()=>{
         signInWithGoogle();
+        
     }
+    let from=location.state.from.pathname || '/';
+    if(user){
+        setTimeout(()=>{
+            navigate(from,{replace:true});
+        },1500)
+    }
+
     return (
         <div>
             <div className='flex justify-center mt-5'>
-                <img width={200} src={logo} alt="" />
+                <Link to="/"><img width={200} src={logo} alt="" /></Link>
             </div>
             <div className='bg-white w-2/5 mx-auto mt-10 px-20 py-36 rounded border-4 border-gray-300'>
                 <div className='text-center'>

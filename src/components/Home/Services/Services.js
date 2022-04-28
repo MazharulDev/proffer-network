@@ -4,12 +4,12 @@ import Service from '../Service/Service';
 const Services = () => {
     const [services,setServices]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/service')
+        fetch('https://gentle-dusk-65278.herokuapp.com/service')
         .then(res=>res.json())
         .then(data=>setServices(data));
     },[])
     return (
-        <div className='grid grid-cols-4 px-10 gap-4 mx-auto w-fit'>
+        <div className='grid grid-cols-4 px-10 gap-8 mx-auto w-fit'>
             {
                 services.map(service=> <Service key={service._id} service={service}/>)
             }

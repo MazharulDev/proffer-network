@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 const Events = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        const url=`http://localhost:5000/service`
+        
+        const url=`https://gentle-dusk-65278.herokuapp.com/service`
         fetch(url,{
             method:"POST",
             headers:{
@@ -19,7 +20,10 @@ const Events = () => {
         .then(res=>res.json())
         .then(result=>{
             console.log(result);
+            alert("Add successfully")
+            
         })
+
     };
     return (
         <div className='flex'>
@@ -39,7 +43,7 @@ const Events = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <div className='p-8 bg-white ml-5 mr-5 rounded-lg' >
-                        <input className='px-3 py-1 border' placeholder='Title' {...register("name", { required: true, maxLength: 20 })} /> <br />
+                        <input className='px-3 py-1 border' placeholder='Title' {...register("name", { required: true, maxLength: 30 })} /> <br />
                         <input className='px-3 py-1 border my-3' placeholder='Images Link' {...register("img")} /> <br />
                     </div>
                     <div className='flex justify-end mr-5 mt-3'>

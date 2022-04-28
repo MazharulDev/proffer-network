@@ -7,6 +7,7 @@ import Donation from './components/pages/Donation/Donation';
 import Events from './components/pages/Events/Events';
 import Login from './components/pages/Login/Login';
 import Register from './components/pages/Register/Register';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -14,7 +15,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/donation' element={<Donation />}></Route>
-        <Route path='/events' element={<Events />}></Route>
+        <Route path='/events' element={
+          <RequireAuth>
+            <Events />
+          </RequireAuth>
+        }></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
